@@ -1,0 +1,72 @@
+Nmap
+
+- Open source network detection and security scanning utility  
+- Packet engine that interacts with the TCP/IP stack to map out the topology of a network  
+- Port States  
+  - Open: An application is actively accepting connections.  
+  - Closed: The port is accessible (no firewall), but no service is listening.  
+  - Filtered: A firewall or filter is blocking the probe. Nmap cannot tell if the port is open or closed.  
+  - Unfiltered: (Only seen in ACK scans) The port is accessible, but Nmap is unsure of its state.  
+  - Open|Filtered: (Common in UDP scans) Nmap received no response and cannot confirm if the port is open or blocked.  
+- Port State Usage  
+  - \-p- flag is the most thorough way to scan, it is significantly slower and generates more network traffic  
+  - \-p 80,443: Scan specific ports. (In this case ports 80 and 443\)  
+  - \-p 1-1024: Scan a range (In this case well-known ports).  
+  - \-F: Fast scan (Top 100 ports).  
+  - \--top-ports 500: Scans the 500 most likely ports based on Nmap's research.  
+  - \-p-: Scan all 65,535 ports.  
+  - Subnets: nmap 192.168.1.0/24 (Scans the entire local network)  
+  - Octet Ranges: nmap 192.168.1.1-50 (Scans the first 50 IPs)  
+  - Input File: nmap \-iL targets.txt (Reads targets from provided file)  
+- NSE (Nmap Scripting Engine)  
+- Write and share scripts to automate a wide variety of networking tasks.  
+  - Lua programming language and are executed by Nmap during the scan.  
+- When running a script, Nmap communicates with the target service to pull data that a standard port scan would miss.  
+  - Discovery: Pulls deeper info (e.g., listing the contents of a public SMB share).  
+  - Vulnerability: Checks for specific bugs (e.g., checking for "EternalBlue").  
+  - Brute Force: Attempts to guess passwords for services like SSH, FTP, or Telnet.  
+  - Intrusive: Scripts that might crash a service or generate significant noise.  
+- NSE Dangers  
+  - Safe scripts are designed not to crash services.  
+  - Intrusive scripts should only be used in controlled environments or with explicit permission, as they can cause denial-of-service (DoS) on fragile systems.  
+- Scan Options  
+  - (-sn) Host Discovery Ping Sweep  
+    - tells Nmap to skip port scanning entirely  
+    - ideal for quickly mapping out a large subnet (e.g., /24) to identify targets before committing to deep scan.  
+    - Local Subnet  
+      - Nmap uses ARP Requests. Since every device must answer ARP to function on a LAN, this isn’t blocked by host-based firewalls.  
+    - Remote Network  
+      - Nmap sends its normal host discovery checks including an ICMP Echo Request, a TCP ACK to port 80, and a TCP SYN to port 443\.  
+  - (-sU) UDP Scanning  
+    - UDP scans can expose services that TCP scans might miss, such as:  
+      - DNS (53)  
+      - DHCP (67/68)  
+      - SNMP (161)  
+      - NTP (123)  
+      - TFTP (69)  
+      - How  
+        - Open: The service sends a UDP response (somewhat rare).  
+        - Closed: The target returns an ICMP Port Unreachable error.  
+        - Open|Filtered: No response is received. Nmap cannot tell if the port is open or if a firewall dropped the packet.  
+  -  (-sC) Default scripts   
+    - Same as ‘--script=default’  
+    - run a collection of NSE scripts that are considered safe, fast, and informative  
+  - (-sV) Service Version Detection  
+    - By default, Nmap guesses the service based on the port number (e.g., assuming port 80 is always HTTP). The \-sV flag proves it.  
+    - Verification  
+      - Banner Grabbing: Nmap connects and listens for an initial "Welcome" string from the service.  
+      - Probing: If the service is silent, Nmap sends a series of complex probes (like an HTTP GET or an SSL Client Hello).  
+      - Signature Matching: The response is compared against a database of thousands of known service signatures to identify the application and version.  
+  - (-O) OS Fingerprinting  
+  - (-A) Aggressive Mode  
+    - Macro flag that activates multiple advanced scanning features at once  
+      - \-sV: Version Detection.  
+      - \-O: OS Fingerprinting.  
+      - \-sC: Running the "default" suite of NSE scripts.  
+      - Traceroute: Mapping the hop-by-hop path to the target  
+    - While convenient, \-A is extremely "noisy." It is easily detected by Intrusion Detection Systems (IDS) and can occasionally crash fragile, older services.  
+  - (-sN, \-sF, \-sX) Bypassing Filters  
+    - Null Scan (-sN): No bits are set in the header.  
+    - FIN Scan (-sF): Only the "Finish" bit is set.  
+    - Xmas Scan (-sX): Sets the FIN, PSH, and URG flags
+
