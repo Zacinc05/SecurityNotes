@@ -1,0 +1,34 @@
+Network Topology
+
+- Physical  
+  - How plugged in  
+- Logical  
+  - How data flows  
+- Common types  
+  - P2P (Point to Point)  
+    - Direct link betw/ nodes  
+  - Bus  
+    - All devices share a single backbone cable  
+    - Cost effective if small network  
+    - Prone to collision  
+  - Ring  
+    - Each device connects to 2 neighbors forming a loop  
+    - Uses token passing  
+    - Minimal collision  
+    - Single failure can disrupt network  
+  - Star  
+    - All devices connect to a central hub  
+  - Mesh  
+    - Every devices connect to every other (full) or some (partial) devices  
+    - Highly reliable/secure  
+    - Costly  
+  - Tree  
+    - Hierarchical structure  
+    - Combine star and bus  
+    - Scalable  
+    - Central hub failure impacts the network  
+  - Hybrid  
+    - Combination of topologies  
+    - Offer flexibility  
+    - High design/maintenance cost
+
