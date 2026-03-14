@@ -1,0 +1,92 @@
+Module 4: Networks
+
+
+MAC
+Media Access Control
+IP
+Internet Protocol
+LAN
+Local Area Network
+WAN
+Wide Area Network
+P2P
+Point to Point
+OSI
+Open Systems Interconnection
+SDU
+Service Data Units
+PDU
+Protocol Data Units
+ARP
+Address Resolution Protocol
+TTL
+Time To Live
+ICMP
+Internet Control Message Protocol
+TCP
+Transmission Control Protocol
+UDP
+User Datagram Protocol
+NSE
+Nmap Scripting Engine
+
+Module 5: Common Services
+
+CVE
+Common Vulnerability & Exposure
+CVSS
+Common Vulnerability Scoring System
+CNA
+CVE Numbering Authority
+NVD
+National Vulnerability Database
+POC
+Proof of Concept
+
+DNS
+Domain Name Services
+NS
+Name Server
+AXFR
+DNS Zone Transfer
+FTP
+File Transfer Protocol
+SMB
+Server Message Block
+SSH
+Secure Shell
+RDP 
+Remote Desktop Protocol
+NLA
+Network Level Authentication
+HTTP/HTTPS
+Hypertext Transfer Protocol
+SQL
+Structured Query Language
+
+
+Module 6: Reporting
+
+POC
+Proof of Concept
+QA
+Quality Assurance
+PTES
+Penetration Testing Execution Standard
+
+Web App
+
+HTTP
+HyperText Transfer Protocol
+
+Web Exploitation
+DNS
+Domain Name System
+TLD
+Top-Level Domain
+gTLD
+Generic Top Level Domain
+ccTLD
+Country Code Top Level Domain
+
+
