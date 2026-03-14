@@ -35,4 +35,3 @@ Writing a Contract
 
 \- Rules of Engagement
 
-- \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_-  
