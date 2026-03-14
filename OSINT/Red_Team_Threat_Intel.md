@@ -1,0 +1,26 @@
+Shodan
+
+- Search engine for devices connected to the Internet  
+- Search for specific types and versions of servers, networking equipment, industrial control systems, and IoT devices
+
+[https://www.shodan.io/](https://www.shodan.io/)
+
+Censys
+
+- Focuses on Internet-connected hosts, websites, certificates, and other Internet assets  
+- Some of its use cases include enumerating domains in use, auditing open ports and services, and discovering rogue assets within a network
+
+[https://search.censys.io/](https://search.censys.io/)
+
+VirusTotal
+
+- Virus-scanning service for files using multiple antivirus engines
+
+[https://www.virustotal.com/gui/home/upload](https://www.virustotal.com/gui/home/upload)
+
+Have I Been Pwned
+
+- Tells you if an email address has appeared in a leaked data breach
+
+[https://haveibeenpwned.com/](https://haveibeenpwned.com/)
+
