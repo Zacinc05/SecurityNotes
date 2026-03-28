@@ -1,13 +1,3 @@
-Traceroute
-
-- Tries to find all hosts on the network between local host and some destination host  
-- Done by sending packets with TTLs increasing from 1 up to 30\.  
-- For each different TTL, 3 packets are sent.  
-- As each packet expires, it should receive an ICMP Time Exceeded reply from the host at which it arrived.  
-- Traceroute waits 5 seconds for each expiration.  
-- If 5 seconds is exceeded, a \* is printed.  
-- Otherwise, if a host responds with the Time-to-Live Exceeded message, then traceroute prints the TTL value, host IP address, and round-trip time of each probe.
-
 Wireshark
 
 - Packet sniffing and analysis tool  
