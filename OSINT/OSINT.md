@@ -100,11 +100,6 @@ DNS Zones
 - Distinct part of domain namespace which is delegated to a legal entity: admin, org, or individual  
 - Zone File: like a spreadsheet containing every single record for that domain
 
-DIG and NSlookup
-
-- Identify relationship between host names and IP addresses  
-- DIG more common now, NSlookup still used.
-
 Zone Transfers
 
 - DNS Zone Transfers are mechanisms used to synchronize DNS records betw/ a primary DNS Server and 1+ secondary server  
@@ -145,4 +140,3 @@ Host Discovery w/ nmap
 - Ports \= virtual endpoints where network connections start/end.  
 - Knowing open ports tells us what software/services are open.  
 - Can scan an IP, range, quick/aggressive, port, etc…
-
